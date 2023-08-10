@@ -1,0 +1,54 @@
+body{
+  background-color: rgb(36, 20, 104);
+  font-family:'Kanit', sans-serif;;
+}
+
+.banner{
+  /*background-color: rgb(159, 13, 127);*/
+ background-image: url(images/bannerImage.png);
+ background-size: cover;
+  padding-top: 15px;
+  margin: 20px 10px;
+
+  height: 250px;
+}
+
+.logo{
+  font-weight: 800;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 2px;
+  color: rgb(255, 255, 255);
+ text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+ 
+}
+.mainDescription{
+  font-weight: 400;
+  text-align: center;
+  color: white;
+  margin-top: 0;
+
+}
+.submitButton{
+  background-color: rgb(234, 17, 121);
+  font-weight: 600;
+  margin-left: -110px;
+  padding: 12px 15px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.submitButton:hover{
+  background-color:rgb(247, 155, 211);
+
+}
+
+input[type=text]{
+
+  width: 70%;
+  padding: 12px 15px;
+  border: none;
+  margin: 0px 80px;
+
+}
