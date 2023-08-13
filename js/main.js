@@ -92,14 +92,25 @@ formSearch.addEventListener("submit", searchDog);
 
 
   
+const dogFactText = document.querySelector("#dogFact");
 
-// axios.get(`https://dogapi.dog/api/v2/breeds/30f62219-e225-42cd-bd07-02425f944c07`).then(function(res){
-  //   console.log(res.data.data);
-  // }).catch(err=> {
-  //   console.log('Error', err);
-  // });
+ axios.get(`https://dogapi.dog/api/v2/facts`).then(function(res){
+  dogFactText.innerHTML = res.data.data[0].attributes.body;
+   }).catch(err=> {
+     console.log('Error', err);
+   });
 
+const buttonFunFact = document.querySelector("#fun-fact");
+buttonFunFact.addEventListener('click', function(ev){
+console.log('clicked', dogFactText.style.display);
 
+  if( dogFactText.style.display === 'none') {
+      return dogFactText.style.display = 'block';
+  } else {
+    dogFactText.style.display = 'none';
+  }
+
+});
 
 
 //https://dogapi.dog/api/v2/facts (RANDOM FACTS ABOUT DOGS)
