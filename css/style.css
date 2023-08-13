@@ -56,3 +56,12 @@ input[type=text]{
 ul{
   color: white;
 }
+.descriptionSupreme{
+  cursor: pointer;
+}
+
+#fun-fact{
+
+   cursor: pointer;
+
+}

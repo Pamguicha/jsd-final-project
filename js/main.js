@@ -4,12 +4,16 @@ console.log('hello dogs', axios);
 const apiKey = 'J0GvRGzkHEE/3HmmtvTKJA==pXp4BWMraSlgHrMp';
 const formSearch = document.querySelector("#searchForm");
 const resultsParent = document.querySelector('#resultsPage');
+const dogName = document.querySelector("#dogQuery").value;
+let breedNameToFind;
 
+
+resultsParent.addEventListener("click", ev => {
+  loadMoreDetailsBreed(ev.target.tex)
+});
 
 const searchDog = (event) => {
   event.preventDefault();
-
-const dogName = document.querySelector("#dogQuery").value;
 
 axios.get('https://api.api-ninjas.com/v1/dogs', {
   params: {
@@ -61,11 +65,13 @@ const renderSearchResult = (breed) => {
   <h1 class="dog"> ${breed.name} </h1>
   <img class="mainDog" src= "${breed.image_link}" />
   <ol> 
+  <button class="descriptionSupreme"> Read more </button>
   <li> <strong>Energy Level:</strong> ${valueLevelToString(breed.energy)}. </li>
   <li> <strong>Good with kids:</strong> ${valueLevelToString(breed.good_with_children)}. </li>
   <li> <strong>Sociable with dogs:</strong> ${valueLevelToString(breed.good_with_other_dogs)} </li>
   <li> <strong>Playfulness Level:</strong> ${valueLevelToString(breed.playfulness)}. </li>
   <li> <strong>Protectiveness:</strong> ${valueLevelToString(breed.protectiveness)}. </li>
+   <li> <strong>Good with strangers:</strong> ${valueLevelToString(breed.good_with_strangers)}. </li>
   <li> <strong>Grooming Level:</strong> ${valueLevelToString(breed.grooming)}. </li>
   <li> <strong>Maximum Life Expectancy:</strong> ${breed.max_life_expectancy} years old. </li>
   <li> <strong>Minimum Life Expectancy:</strong> ${breed.min_life_expectancy} years old. </li>
@@ -80,18 +86,43 @@ const renderSearchResult = (breed) => {
 
 formSearch.addEventListener("submit", searchDog);
 
-//Name dog: res.data[0].name
-//life expectansi: res.data[0].max_life_expectancy
-// trainiability: trainability:
-//barking
-//energy
-//image_link
-//playfulness
-//gromming
 
 
+//DETAILS DOG MORE INFO NEW API  
 
+const loadMoreDetailsBreed = () => {
+breedNameToFind = dogName;
+
+axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
+  const breeds = res.data;
   
+  const foundBreed = breeds.find(breed => breed.name.toLowerCase().includes(breedNameToFind.toLowerCase())
+  );
+  
+  if (foundBreed) {
+    console.log(foundBreed);
+     resultsParent.innerHTML = `
+     <div>
+     
+     <h2> ${foundBreed.name}</h2>
+     <p> <strong> Temperament: </strong> ${foundBreed.temperament}. </p>
+     <p> <strong> Breed for: </strong>${foundBreed.bred_for}. </p>
+     <p> <strong> Breed group: </strong>${foundBreed.breed_group}. </p>
+     <p> <strong> Weight: </strong>${foundBreed.weight.metric} kg. </p>
+     <p> <strong> Height: </strong>${foundBreed.height.metric} kg. </p>
+     <img class = "detailImage" src="${foundBreed.image.url}" </img>
+     </div>
+     `;
+  } else {
+    console.log('Sorry information of Breed not found.');
+  }
+}).catch(err => {
+  console.log('Error', err);
+});
+}
+
+
+//(RANDOM FACTS ABOUT DOGS)
 const dogFactText = document.querySelector("#dogFact");
 
  axios.get(`https://dogapi.dog/api/v2/facts`).then(function(res){
@@ -113,10 +144,11 @@ console.log('clicked', dogFactText.style.display);
 });
 
 
-//https://dogapi.dog/api/v2/facts (RANDOM FACTS ABOUT DOGS)
+
 
 //https://dogapi.dog/docs/api-v2
 
 
 
-//I am going to use this for the ID TASK: https://documenter.getpostman.com/view/4016432/the-dog-api/RW81vZ4Z#11045fd3-0890-4f23-b5ea-f268a3f5eced
+//if it doesn't work I will add a functionality to check random images from dogs
+//https://dog.ceo/dog-api/
