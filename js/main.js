@@ -4,12 +4,12 @@ console.log('hello dogs', axios);
 const apiKey = 'J0GvRGzkHEE/3HmmtvTKJA==pXp4BWMraSlgHrMp';
 const formSearch = document.querySelector("#searchForm");
 const resultsParent = document.querySelector('#resultsPage');
-const dogName = document.querySelector("#dogQuery").value;
+const dogName = document.querySelector("#dogQuery");
 let breedNameToFind;
 
 
 resultsParent.addEventListener("click", ev => {
-  loadMoreDetailsBreed(ev.target.tex)
+  loadMoreDetailsBreed(ev.target.textContent);
 });
 
 const searchDog = (event) => {
@@ -17,7 +17,7 @@ const searchDog = (event) => {
 
 axios.get('https://api.api-ninjas.com/v1/dogs', {
   params: {
-    name: `${dogName}`
+    name: `${dogName.value}`
     },
   headers: {
     'X-Api-Key': `${apiKey}`
@@ -91,7 +91,7 @@ formSearch.addEventListener("submit", searchDog);
 //DETAILS DOG MORE INFO NEW API  
 
 const loadMoreDetailsBreed = () => {
-breedNameToFind = dogName;
+breedNameToFind = dogName.value;
 
 axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
   const breeds = res.data;
@@ -110,8 +110,6 @@ axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
      <p> <strong> Breed group: </strong>${foundBreed.breed_group}. </p>
      <p> <strong> Weight: </strong>${foundBreed.weight.metric} kg. </p>
      <p> <strong> Height: </strong>${foundBreed.height.metric} kg. </p>
-     <img class = "detailImage" src="${foundBreed.image.url}" </img>
-     </div>
      `;
   } else {
     console.log('Sorry information of Breed not found.');
@@ -120,7 +118,7 @@ axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
   console.log('Error', err);
 });
 }
-
+  //<img class = "detailImage" src="${foundBreed.image.url}" </img></img> API DOES NOT HAVE IMAGE IN THEIR DATA ANYMORE :(
 
 //(RANDOM FACTS ABOUT DOGS)
 const dogFactText = document.querySelector("#dogFact");
