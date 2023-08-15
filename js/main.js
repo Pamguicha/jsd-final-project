@@ -108,7 +108,7 @@ axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
      <p> <strong> Breed for: </strong>${foundBreed.bred_for}. </p>
      <p> <strong> Breed group: </strong>${foundBreed.breed_group}. </p>
      <p> <strong> Weight: </strong>${foundBreed.weight.metric} kg. </p>
-     <p> <strong> Height: </strong>${foundBreed.height.metric} kg. </p>
+     <p> <strong> Height: </strong>${foundBreed.height.metric} Cm. </p>
      <img class = "detailImage" src="https://cdn2.thedogapi.com/images/${foundBreed.reference_image_id}_1280.jpg"</img>
      </div>
      `;
@@ -129,7 +129,7 @@ axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
 //(RANDOM FACTS ABOUT DOGS)
 const dogFactText = document.querySelector("#dogFact");
 
- axios.get(`https://dogapi.dog/api/v2/facts`).then(function(res){
+ axios.get(`https://dogapi.dog/api/v2/facts`).then(res =>{
   dogFactText.innerHTML = res.data.data[0].attributes.body;
    }).catch(err=> {
      console.log('Error', err);

@@ -1,8 +1,5 @@
 body{
-  margin-top: 0;
-  margin-left: 0;
-  margin-right: 0;
- 
+  margin: auto;
   background-color: rgb(226, 182, 217);
   font-family:'Kanit', sans-serif;
  
@@ -13,7 +10,7 @@ body{
  background-image: url(images/bagel.png);
  background-size: cover;
   padding-top: 15px;
-  margin: 20px 10px;
+  margin: 100px 10px 20px 10px;
   border-radius: 20px;
   height: 250px;
 }
@@ -76,9 +73,10 @@ ul{
 nav{
   background-color: #9f0d7f;
   padding: 10px;
-
-
- 
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 
 .mainMenu{
@@ -98,7 +96,7 @@ a{
  color: rgb(247, 155, 211);
  text-decoration: none;
  cursor: pointer;
-padding-right: 10px;
+padding-right: 20px;
    
 }
 a:hover{
@@ -149,7 +147,8 @@ button#fun-fact:hover{
 .container{
   background-color: rgb(255, 255, 255);
   display: flex;
-  margin: 10px 10px 10px 10px;
+  margin-top: 10px;
+  margin-bottom: 60px;
   align-items: center;
 }
 
@@ -160,6 +159,7 @@ float: left;
 
 .detailImage{
   height: 400px;
+ 
 }
 
 .descriptionSupreme{
@@ -178,4 +178,24 @@ float: left;
 }
 .foundBreed{
   font-size: 40px;
+}
+
+footer{
+position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #9f0d7f;
+   color: white;
+   text-align: center;
+
+  
+}
+
+.randomImage{
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  height: 500px;
+  cursor: pointer;
 }
