@@ -5,6 +5,11 @@ const apiKey = 'J0GvRGzkHEE/3HmmtvTKJA==pXp4BWMraSlgHrMp';
 const formSearch = document.querySelector("#searchForm");
 const resultsParent = document.querySelector('#resultsPage');
 const dogName = document.querySelector("#dogQuery");
+
+// From RANDOM IMAGE
+const imageRandom = document.querySelector("#randomDog");
+const imageTitle = document.querySelector("#titleImg");
+
 let breedNameToFind;
 
 
@@ -14,6 +19,8 @@ resultsParent.addEventListener("click", ev => {
 
 const searchDog = (event) => {
   event.preventDefault();
+imageRandom.style.display = "none";
+imageTitle.style.display= "none";
 
 axios.get('https://api.api-ninjas.com/v1/dogs', {
   params: {
@@ -146,6 +153,28 @@ console.log('clicked', dogFactText.style.display);
   }
 
 });
+
+
+const API_Key = "live_vc6D7YmPdqnKm4n6LhTnlKKfnnSfvRCoCDlz9sJCIW67gReazVKUARr2vKsAdR3x";
+
+
+imageRandom.addEventListener( "click", ev => {
+  changeRandomImage(ev.target);
+}
+)
+
+const changeRandomImage = () => {
+axios.get(`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1&api_key=${API_Key}`).then(res => {
+  console.log(res.data[0].breeds[0].name);
+  imageRandom.src = res.data[0].url;
+  imageTitle.innerHTML = `<strong>Click to See Random Dog Pictures: </strong>${res.data[0].breeds[0].name}`;
+  })
+.catch(err => {
+  console.log('Error loading search results', err);
+  });
+}
+
+
 
 
 

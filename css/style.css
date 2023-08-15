@@ -15,6 +15,10 @@ body{
   height: 250px;
 }
 
+.clickLogo{
+  color: white;
+}
+
 .logo{
   font-weight: 800;
   font-size: 50px;
@@ -167,14 +171,14 @@ float: left;
   padding: 10px 70px;
   display: block;
   margin: auto;
-  background-color: rgb(247, 155, 211);
+  background-color: rgb(234, 17, 121);
   border: none;
   color: white;
   font-weight: bold;
 }
 
 .descriptionSupreme:hover{
-  background-color:rgb(234, 17, 121);
+  background-color: rgb(247, 155, 211);
 }
 .foundBreed{
   font-size: 40px;
@@ -198,4 +202,11 @@ position: fixed;
   margin-top: 10px;
   height: 500px;
   cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+div.image-container{
+  text-align: center;
+  padding: 10px 10px;
 }
