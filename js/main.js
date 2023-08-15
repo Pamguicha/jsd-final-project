@@ -64,8 +64,7 @@ const renderSearchResult = (breed) => {
   divTag.innerHTML = `
   <h1 class="dog"> ${breed.name} </h1>
   <img class="mainDog" src= "${breed.image_link}" />
-  <ol> 
-  <button class="descriptionSupreme"> Read more </button>
+  <ol class="list-description"> 
   <li> <strong>Energy Level:</strong> ${valueLevelToString(breed.energy)}. </li>
   <li> <strong>Good with kids:</strong> ${valueLevelToString(breed.good_with_children)}. </li>
   <li> <strong>Sociable with dogs:</strong> ${valueLevelToString(breed.good_with_other_dogs)} </li>
@@ -77,8 +76,8 @@ const renderSearchResult = (breed) => {
   <li> <strong>Minimum Life Expectancy:</strong> ${breed.min_life_expectancy} years old. </li>
   <li> <strong>Barking Level:</strong> ${valueLevelToString(breed.barking)}. </li>
   <li> <strong>Trainability Level:</strong> ${valueLevelToString(breed.trainability)}. </li>
-   
   </ol>
+    <button class="descriptionSupreme"> Read more </button>
   `
   resultsParent.appendChild(divTag);
 };
@@ -102,17 +101,24 @@ axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
   if (foundBreed) {
     console.log(foundBreed);
      resultsParent.innerHTML = `
-     <div>
+     <div class="test">
      
-     <h2> ${foundBreed.name}</h2>
+     <h2 class="foundBreed"> ${foundBreed.name}</h2>
      <p> <strong> Temperament: </strong> ${foundBreed.temperament}. </p>
      <p> <strong> Breed for: </strong>${foundBreed.bred_for}. </p>
      <p> <strong> Breed group: </strong>${foundBreed.breed_group}. </p>
      <p> <strong> Weight: </strong>${foundBreed.weight.metric} kg. </p>
      <p> <strong> Height: </strong>${foundBreed.height.metric} kg. </p>
+     <img class = "detailImage" src="https://cdn2.thedogapi.com/images/${foundBreed.reference_image_id}_1280.jpg"</img>
+     </div>
      `;
   } else {
-    console.log('Sorry information of Breed not found.');
+    resultsParent.innerHTML = ` 
+    <h1>Sorry information of Breed not found. <small> In the meantime, read about the <a <a href="https://www.dogsplanet.com/en/mixed-breeds/beagador/"class="beagador">Beagador,</a>a crazy but loveble mixed breed.</small></h1>
+    
+     <img class="mainDog" src= "css/images/chew.jpg" />
+    
+    `;
   }
 }).catch(err => {
   console.log('Error', err);

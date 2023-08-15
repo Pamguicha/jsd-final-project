@@ -1,15 +1,20 @@
 body{
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+ 
   background-color: rgb(226, 182, 217);
-  font-family:'Kanit', sans-serif;;
+  font-family:'Kanit', sans-serif;
+ 
 }
 
 .banner{
   /*background-color: rgb(159, 13, 127);*/
- background-image: url(images/bannerImage.png);
+ background-image: url(images/bagel.png);
  background-size: cover;
   padding-top: 15px;
   margin: 20px 10px;
-
+  border-radius: 20px;
   height: 250px;
 }
 
@@ -33,9 +38,10 @@ body{
 .submitButton{
   background-color: rgb(234, 17, 121);
   font-weight: 600;
-  margin-left: -110px;
+  margin-left: -120px;
   padding: 12px 15px;
   border: none;
+  border-radius: 30px;
   cursor: pointer;
   color: white;
 }
@@ -50,6 +56,7 @@ input[type=text]{
   padding: 12px 15px;
   border: none;
   margin: 0px 80px;
+  border-radius: 30px;
 
 }
 
@@ -64,4 +71,111 @@ ul{
 
    cursor: pointer;
 
+}
+
+nav{
+  background-color: #9f0d7f;
+  padding: 10px;
+
+
+ 
+}
+
+.mainMenu{
+  display: flex;
+  justify-content:space-between;
+  list-style: none;
+}
+.nameLogo{
+font-weight: bold;
+margin-left: -20px;
+font-size: 17px;
+text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+a{
+ font-weight: 600;
+ color: rgb(247, 155, 211);
+ text-decoration: none;
+ cursor: pointer;
+padding-right: 10px;
+   
+}
+a:hover{
+color:rgb(255, 255, 255);
+}
+
+button#fun-fact{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  padding: 20px 10px 20px 10px;
+  background-color: #9f0d7f;
+  border: none;
+}
+button#fun-fact:hover{
+   background-color:rgb(247, 155, 211);
+
+}
+
+.dogTextFact{
+  font-size: 20px;
+  color:  #9f0d7f;
+  text-align: center;
+}
+
+.dog{
+  color:  #9f0d7f;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+.list-description{
+ display: grid;
+ justify-content: right;
+ color: #9f0d7f;
+ font-size: 18px;
+}
+.test{
+  background-color: rgb(255, 255, 255);
+  color: #9f0d7f;
+  margin: auto;
+  display: block;
+}
+
+.container{
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  margin: 10px 10px 10px 10px;
+  align-items: center;
+}
+
+.mainDog{
+height: 400px;
+float: left;
+}
+
+.detailImage{
+  height: 400px;
+}
+
+.descriptionSupreme{
+  cursor: pointer;
+  padding: 10px 70px;
+  display: block;
+  margin: auto;
+  background-color: rgb(247, 155, 211);
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.descriptionSupreme:hover{
+  background-color:rgb(234, 17, 121);
+}
+.foundBreed{
+  font-size: 40px;
 }
