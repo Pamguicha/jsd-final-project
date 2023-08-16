@@ -154,7 +154,8 @@ console.log('clicked', dogFactText.style.display);
 
 });
 
-
+//Documentation for random picture feature
+//Api Key Random Feature
 const API_Key = "live_vc6D7YmPdqnKm4n6LhTnlKKfnnSfvRCoCDlz9sJCIW67gReazVKUARr2vKsAdR3x";
 
 
@@ -178,10 +179,3 @@ axios.get(`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&fo
 
 
 
-
-//https://dogapi.dog/docs/api-v2
-
-
-
-//if it doesn't work I will add a functionality to check random images from dogs
-//https://dog.ceo/dog-api/
