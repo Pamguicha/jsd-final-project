@@ -9,13 +9,13 @@ Lastly, I've added a random photo gallery to cheer you up when you need a pup sm
 <h2> Link Website: https://doggyhub.netlify.app/ </h2>
 
 <h2> Wireframes </h2>
-<img class="randomImage" id="randomDog" src="images-readme/4.png" alt="dog">
-<img class="randomImage" id="randomDog" src="images-readme/5.png" alt="dog">
+<img src="images-readme/4.png" alt="dog">
+<img  src="images-readme/5.png" alt="dog">
 
 <h2> Screenshots</h2>
-<img class="randomImage" id="randomDog" src="images-readme/1.png" alt="dog">
-<img class="randomImage" id="randomDog" src="images-readme/2.png" alt="dog">
-<img class="randomImage" id="randomDog" src="images-readme/3.png" alt="dog">
+<img  src="images-readme/1.png" alt="dog">
+<img  src="images-readme/2.png" alt="dog">
+<img  src="images-readme/3.png" alt="dog">
 
 
 <h2>Explain a technical hurdle (something you struggled with) </h2>
