@@ -13,7 +13,7 @@ Lastly, I've added a random photo gallery to cheer you up when you need a pup sm
 <img  src="images-readme/5.png" alt="dog">
 
 <h2> Screenshots</h2>
-<img  src="images-readme/1.png" alt="dog">
+![Alt text](Images-readme/4.png)
 <img  src="images-readme/2.png" alt="dog">
 <img  src="images-readme/3.png" alt="dog">
 
