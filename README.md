@@ -9,14 +9,18 @@ Lastly, I've added a random photo gallery to cheer you up when you need a pup sm
 <h2> Link Website: https://doggyhub.netlify.app/ </h2>
 
 <h2> Wireframes </h2>
-<img src="images-readme/4.png" alt="dog">
-<img  src="images-readme/5.png" alt="dog">
+![4](https://github.com/Pamguicha/jsd-final-project/assets/112230133/02d6057b-4120-40ee-9a2e-d3bfcf89a69c)
 
-<h2> Screenshots</h2>![1](https://github.com/Pamguicha/jsd-final-project/assets/112230133/ccd066b0-5fec-4ff6-8e17-e74b44420c6e)
+![5](https://github.com/Pamguicha/jsd-final-project/assets/112230133/420d86b3-6200-4e3c-a8ea-60d5d19d7667)
 
-![Alt text](Images-readme/4.png)
-<img  src="images-readme/2.png" alt="dog">
-<img  src="images-readme/3.png" alt="dog">
+
+<h2> Screenshots</h2>
+![1](https://github.com/Pamguicha/jsd-final-project/assets/112230133/de4073b5-aa30-4369-8991-7f524ad85889)
+![2](https://github.com/Pamguicha/jsd-final-project/assets/112230133/baf935d0-dcf5-4fa5-b592-c10aad300eae)
+![3](https://github.com/Pamguicha/jsd-final-project/assets/112230133/ee59d815-af8c-444b-8c09-875286943a36)
+
+
+
 
 
 <h2>Explain a technical hurdle (something you struggled with) </h2>
