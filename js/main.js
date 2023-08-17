@@ -1,6 +1,4 @@
 
-console.log('hello dogs', axios);
-
 const apiKey = 'J0GvRGzkHEE/3HmmtvTKJA==pXp4BWMraSlgHrMp';
 const formSearch = document.querySelector("#searchForm");
 const resultsParent = document.querySelector('#resultsPage');
@@ -131,7 +129,7 @@ axios.get('https://api.thedogapi.com/v1/breeds').then(function(res) {
   console.log('Error', err);
 });
 }
-  //<img class = "detailImage" src="${foundBreed.image.url}" </img></img> API DOES NOT HAVE IMAGE IN THEIR DATA ANYMORE :(
+
 
 //(RANDOM FACTS ABOUT DOGS)
 const dogFactText = document.querySelector("#dogFact");
@@ -166,7 +164,6 @@ imageRandom.addEventListener( "click", ev => {
 
 const changeRandomImage = () => {
 axios.get(`https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1&api_key=${API_Key}`).then(res => {
-  console.log(res.data[0].breeds[0].name);
   imageRandom.src = res.data[0].url;
   imageTitle.innerHTML = `<strong>Click to See Random Dog Pictures: </strong>${res.data[0].breeds[0].name}`;
   })
