@@ -12,7 +12,8 @@ Lastly, I've added a random photo gallery to cheer you up when you need a pup sm
 <img src="images-readme/4.png" alt="dog">
 <img  src="images-readme/5.png" alt="dog">
 
-<h2> Screenshots</h2>
+<h2> Screenshots</h2>![1](https://github.com/Pamguicha/jsd-final-project/assets/112230133/ccd066b0-5fec-4ff6-8e17-e74b44420c6e)
+
 ![Alt text](Images-readme/4.png)
 <img  src="images-readme/2.png" alt="dog">
 <img  src="images-readme/3.png" alt="dog">
